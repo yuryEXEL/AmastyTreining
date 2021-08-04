@@ -4,7 +4,7 @@ use Magento\Framework\Component\ComponentRegistrar;
 
 ComponentRegistrar::register(
     ComponentRegistrar::MODULE,
-    'Amasty_HelloWorld',
+    'Amasty_UserName',
     __DIR__
 );
 

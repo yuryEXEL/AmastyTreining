@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Amasty\HelloWorld\Controller\Index;
+namespace Amasty\UserName\Controller\Index;
 
 
 use Magento\Framework\App\Action\Action;
 use Magento\Framework\App\Action\HttpGetActionInterface;
 
-class Index extends Action implements HttpGetActionInterface
+class cdIndex extends Action implements HttpGetActionInterface
 {
     public function execute()
     {
