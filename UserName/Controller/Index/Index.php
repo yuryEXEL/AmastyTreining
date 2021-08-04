@@ -8,7 +8,7 @@ namespace Amasty\UserName\Controller\Index;
 use Magento\Framework\App\Action\Action;
 use Magento\Framework\App\Action\HttpGetActionInterface;
 
-class cdIndex extends Action implements HttpGetActionInterface
+class Index extends Action implements HttpGetActionInterface
 {
     public function execute()
     {
