@@ -1,0 +1,13 @@
+<?php
+/** @var \Amasty\UserName\Block\Index $block */
+?>
+<div>
+    <form action="\">
+        <div >
+            <input type="text" name="sku" size="20">
+            <input type="number" name="qty" size="20">
+        </div>
+        <div><?= $block->getChildHtml(); ?></div>
+        <div align="right"><button>Отправить</button></div>
+    </form>
+</div>

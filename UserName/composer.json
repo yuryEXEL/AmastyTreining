@@ -1,5 +1,5 @@
 {
-  "name": "Amasty/UserName",
+  "name": "amasty/user-name",
   "description": "A module that creates a page in the Magento admin area",
   "type": "magento2-module",
   "version": "1.0.0",

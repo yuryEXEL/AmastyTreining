@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="3columns"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Amasty_UserName::css/mystyle.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <referenceContainer name="content">
+            <container name="Amasty_UserName.main" htmlTag="div" htmlClass="cantainer-add-form">
+                <block name="Amasty_UserName.hello" template="Amasty_UserName::hello.phtml" />
+                <block name="Amasty_UserName.form" template="Amasty_UserName::form.phtml">
+                    <block name="Amasty_UserName.additional" template="Amasty_UserName::additional.phtml" />
+                </block>
+            </container>
+        </referenceContainer>
+    </body>
+</page>
