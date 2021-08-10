@@ -1,13 +1,18 @@
-<?php
-/** @var \Amasty\UserName\Block\Index $block */
-?>
 <div>
     <form action="\">
-        <div >
-            <input type="text" name="sku" size="20">
+        <div  class="<?= $this->getData('class_form'); ?>">
+            <label for="sku">sku</label>
+            <input type="text" name="sku" size="20"></Br>
+            <label for="qty">qty</label></Br>
             <input type="number" name="qty" size="20">
         </div>
-        <div><?= $block->getChildHtml(); ?></div>
-        <div align="right"><button>Отправить</button></div>
+
+        <div class="<?= $this->getData('class_additional'); ?>">
+            <?= $block->getChildHtml(); ?>
+        </div>
+
+        <div align="right">
+            <button>Отправить</button>
+        </div>
     </form>
 </div>

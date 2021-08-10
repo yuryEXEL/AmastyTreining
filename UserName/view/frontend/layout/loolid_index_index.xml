@@ -11,6 +11,10 @@
                 <block name="Amasty_UserName.hello" template="Amasty_UserName::hello.phtml" />
                 <block name="Amasty_UserName.form" template="Amasty_UserName::form.phtml">
                     <block name="Amasty_UserName.additional" template="Amasty_UserName::additional.phtml" />
+                    <arguments>
+                        <argument name="class_form" xsi:type="string">form</argument>
+                        <argument name="class_additional" xsi:type="string">additional</argument>
+                    </arguments>
                 </block>
             </container>
         </referenceContainer>
