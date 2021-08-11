@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+            <user_name_config>
+                <general>
+                    <enebled>1</enebled>
+                    <show_qty>1</show_qty>
+                </general>
+            </user_name_config>
+    </default>
+</config>

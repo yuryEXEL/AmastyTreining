@@ -6,12 +6,33 @@ namespace Amasty\UserName\Controller\Index;
 
 
 use Magento\Framework\App\Action\Action;
+use Magento\Framework\App\Action\Context;
 use Magento\Framework\App\Action\HttpGetActionInterface;
+use Magento\Framework\App\Config\ScopeConfigInterface;
+use Magento\Framework\Controller\ResultFactory;
+
 
 class Index extends Action implements HttpGetActionInterface
 {
+    /**
+     * @var ScopeConfigInterface
+     */
+    private $scopeConfig;
+
+    public function __construct(
+        Context $context,
+        ScopeConfigInterface $scopeConfig
+    ){
+        $this->scopeConfig = $scopeConfig;
+        parent::__construct($context);
+    }
+
     public function execute()
     {
-        echo "Привет Magento. Привет Amasty. Я готов тебя покорить!";
+        if($this->scopeConfig->getValue('user_name_config/general/enebled')) {
+            return $this->resultFactory->create(ResultFactory::TYPE_PAGE);
+        }else{
+            die('Sorry, go home');
+        }
     }
 }
