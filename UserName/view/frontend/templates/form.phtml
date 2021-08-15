@@ -1,13 +1,14 @@
 <?php
 /**@var  Amasty\UserName\Block\Index $block */
+
 ?>
 
 <div>
-    <form action="\">
+    <form action="<?=  $block->getUrl('*/cart/add'); ?>">
         <div  class="<?= $this->getData('class_form'); ?>">
             <label for="sku">sku</label>
-            <input type="text" name="sku" size="20"></Br>
-            <?php echo $block->showQty()=='1' ? "<label for='qty'>qty</label></Br><input type='number' value='".$block->getDefaultValueQty()."' name='qty' size='20'>":''; ?>
+            <input type="text" id="sku" name="sku" size="20" ></Br>
+            <?= ($block->showQty()=='1') ? '<label for="qty">qty</label></Br><input type="number" id="qty" value="'.$block->getDefaultValueQty().'" name="qty" size="20">' : '' ?>
         </div>
 
         <div class="<?= $this->getData('class_additional'); ?>">

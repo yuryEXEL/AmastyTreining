@@ -29,6 +29,8 @@ class Index extends Action implements HttpGetActionInterface
 
     public function execute()
     {
+
+
         if($this->scopeConfig->getValue('user_name_config/general/enebled')) {
             return $this->resultFactory->create(ResultFactory::TYPE_PAGE);
         }else{
