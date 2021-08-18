@@ -5,10 +5,13 @@
 
 <div>
     <form action="<?=  $block->getUrl('*/cart/add'); ?>">
-        <div  class="<?= $this->getData('class_form'); ?>">
+        <div  class="<?= $this->getData('class_form'); ?> " data-bind="scope: 'userAutocomplete'">
             <label for="sku">sku</label>
-            <input type="text" id="sku" name="sku" size="20" ></Br>
-            <?= ($block->showQty()=='1') ? '<label for="qty">qty</label></Br><input type="number" id="qty" value="'.$block->getDefaultValueQty().'" name="qty" size="20">' : '' ?>
+            <input type="text" id="sku" name="sku" size="20" data-bind="textInput: searchText">
+            <ul class="result-search">
+                <!-- ko template: getTemplate() --><!-- /ko -->
+            </ul>
+            <?= ($block->showQty()=='1') ? '<label for="qty">qty</label><input type="number" id="qty" value="'.$block->getDefaultValueQty().'" name="qty" size="20">' : '' ?>
         </div>
 
         <div class="<?= $this->getData('class_additional'); ?>">
@@ -20,3 +23,18 @@
         </div>
     </form>
 </div>
+
+<script type="text/x-magento-init">
+   {
+       "*": {
+           "Magento_Ui/js/core/app": {
+               "components": {
+                   "userAutocomplete": {
+                       "component": "Amasty_UserName/js/koAutocomplete",
+                       "template" : "Amasty_UserName/koAutocomplete"
+                   }
+               }
+           }
+       }
+   }
+</script>

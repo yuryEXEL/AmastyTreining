@@ -82,15 +82,5 @@ class Add extends Action
             $this->_redirect('lool/');
         }
 
-/**ad collection  */
-//        $productCollection = $this->productCollectionFactory->create();
-//        $productCollection->addAttributeToFilter('sku',
-//                ['attribute' => 'sku', 'like' => '%'.$sku.'%']
-//        );
-//        $productCollection->addAttributeToSelect('*');
-//        foreach ($productCollection as $product) {
-
-//        }
-
     }
 }
