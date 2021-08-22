@@ -9,6 +9,7 @@ use Magento\Framework\App\Config\ScopeConfigInterface;
 
 class Index extends Template
 {
+    const FORM_ACTION = 'http://localhost/magento2/lool/cart/add';
     /**
      * @var ScopeConfigInterface
      */
@@ -21,6 +22,11 @@ class Index extends Template
     ){
         $this->scopeConfig = $scopeConfig;
         parent::__construct($context, $data);
+    }
+
+    public function getFormAction()
+    {
+        return self::FORM_ACTION;
     }
 
     public function getGreet()

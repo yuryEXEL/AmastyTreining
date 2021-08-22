@@ -4,7 +4,7 @@
 ?>
 
 <div>
-    <form action="<?=  $block->getUrl('*/cart/add'); ?>">
+    <form action="<?=  $block->getFormAction() ?>" method="post">
         <div  class="<?= $this->getData('class_form'); ?> " data-bind="scope: 'userAutocomplete'">
             <label for="sku">sku</label>
             <input type="text" id="sku" name="sku" size="20" data-bind="textInput: searchText">

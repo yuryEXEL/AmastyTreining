@@ -7,12 +7,11 @@ namespace Amasty\UserName\Controller\Index;
 
 use Magento\Framework\App\Action\Action;
 use Magento\Framework\App\Action\Context;
-use Magento\Framework\App\Action\HttpGetActionInterface;
 use Magento\Framework\App\Config\ScopeConfigInterface;
 use Magento\Framework\Controller\ResultFactory;
 
 
-class Index extends Action implements HttpGetActionInterface
+class Index extends Action
 {
     /**
      * @var ScopeConfigInterface
@@ -29,8 +28,6 @@ class Index extends Action implements HttpGetActionInterface
 
     public function execute()
     {
-
-
         if($this->scopeConfig->getValue('user_name_config/general/enebled')) {
             return $this->resultFactory->create(ResultFactory::TYPE_PAGE);
         }else{

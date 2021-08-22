@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="amasty_username_check_submit_product">
+        <observer
+            name="CheckSubmitProduct"
+            instance="Amasty\SecondUsername\Observer\CheckSubmitProduct" />
+    </event>
+</config>
+

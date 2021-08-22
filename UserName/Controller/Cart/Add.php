@@ -10,6 +10,7 @@ use Magento\Framework\App\Config\ScopeConfigInterface;
 use Magento\Catalog\Model\ResourceModel\Product\CollectionFactory as ProductCollectionFactory;
 use Magento\Framework\Exception\NoSuchEntityException;
 use Magento\CatalogInventory\Model\Stock\StockItemRepository;
+use Magento\Framework\Event\ManagerInterface as EventManager;
 
 
 class Add extends Action
@@ -30,11 +31,14 @@ class Add extends Action
      * @var ProductCollectionFactory
      */
     private $productCollectionFactory;
-
     /**
      * @var StockItemRepository
      */
     private $stockItemRepository;
+    /**
+     * @var EventManager
+     */
+    private $eventManager;
 
     public function __construct(
         Context $context,
@@ -42,7 +46,8 @@ class Add extends Action
         CheckoutSession $session,
         ProductRepositoryInterface $productRepository,
         ProductCollectionFactory $productCollectionFactory,
-        StockItemRepository $stockItemRepository
+        StockItemRepository $stockItemRepository,
+        EventManager $eventManager
 
     ){
         $this->scopeConfig = $scopeConfig;
@@ -50,6 +55,7 @@ class Add extends Action
         $this->productRepository = $productRepository;
         $this->productCollectionFactory = $productCollectionFactory;
         $this->stockItemRepository = $stockItemRepository;
+        $this->eventManager = $eventManager;
 
         parent::__construct($context);
     }
@@ -62,6 +68,7 @@ class Add extends Action
         }
         $sku = $this->getRequest()->getParam('sku');
         $qty = $this->getRequest()->getParam('qty');
+
 
 
         try {
@@ -77,6 +84,12 @@ class Add extends Action
             }
             $quote->addProduct($product, $qty);
             $quote->save();
+
+            $this->eventManager->dispatch(
+                'amasty_username_check_submit_product',
+                ['value_sku' => $sku]
+            );
+
         } catch (NoSuchEntityException $e) {
             $this->messageManager->addWarningMessage("Продукт \" $sku\" не существует");
             $this->_redirect('lool/');
