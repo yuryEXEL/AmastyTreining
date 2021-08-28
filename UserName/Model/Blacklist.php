@@ -11,6 +11,7 @@ class Blacklist extends AbstractModel
      * Class Blacklist
      * @method string getSku()
      * @method integer getQty()
+     * @method integer getBlacklist_Id()
      */
 
     protected function _construct()

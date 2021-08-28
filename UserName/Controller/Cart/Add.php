@@ -65,9 +65,6 @@ class Add extends Action
         ProductRepositoryInterface $productRepository,
         StockItemRepository $stockItemRepository,
         EventManager $eventManager
-
-
-
     ){
         $this->blacklistFactory = $blacklistFactory;
         $this->blacklistResource = $blacklistResource;
@@ -144,9 +141,6 @@ class Add extends Action
                 $this->messageManager->addWarningMessage("Добавлено в корзину в количестве \" $totalqty\" единиц");
                 $this->_redirect('lool/');
             }
-
         }
-
-
     }
 }

@@ -7,6 +7,7 @@
                 <general>
                     <enebled>1</enebled>
                     <show_qty>1</show_qty>
+                    <template>blacklist</template>
                 </general>
             </user_name_config>
     </default>
